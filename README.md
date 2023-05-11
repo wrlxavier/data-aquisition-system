@@ -114,10 +114,10 @@ Por padrão, o emulador de sensor tentará se conectar a um servidor executando 
 Argumentos da linha de comando
 O emulador de sensor aceita vários argumentos de linha de comando que permitem controlar seu comportamento:
 
-```--ip```: O endereço IP do servidor ao qual o emulador de sensor deve se conectar. O padrão é 'localhost'.
-```--port```: A porta do servidor à qual o emulador de sensor deve se conectar. O padrão é 9000.
-```--sensor_id```: A ID do sensor que o emulador deve usar ao enviar leituras. Por padrão, isso é uma string aleatória de até 31 caracteres.
-```--frequency```: A frequência, em milissegundos, com que o emulador de sensor deve enviar novas leituras. O padrão é 1000 (1 segundo).
+- ```--ip```: O endereço IP do servidor ao qual o emulador de sensor deve se conectar. O padrão é 'localhost'.
+- ```--port```: A porta do servidor à qual o emulador de sensor deve se conectar. O padrão é 9000.
+- ```--sensor_id```: A ID do sensor que o emulador deve usar ao enviar leituras. Por padrão, isso é uma string aleatória de até 31 caracteres.
+- ```--frequency```: A frequência, em milissegundos, com que o emulador de sensor deve enviar novas leituras. O padrão é 1000 (1 segundo).
 
 Aqui está um exemplo de como executar o emulador de sensor com argumentos personalizados:
 
