@@ -126,3 +126,15 @@ python3 sensor_emulator.py --ip 192.168.1.100 --port 8000 --sensor_id my_sensor 
 ```
 
 Este comando fará com que o emulador de sensor se conecte a um servidor em 192.168.1.100 na porta 8000, use 'my_sensor' como a ID do sensor, e envie uma nova leitura a cada 500 milissegundos.
+
+## Pasta de Exemplos
+
+A pasta de exemplos contém alguns arquivos de código-fonte que servem como exemplos de como implementar algumas das funcionalidades requeridas para este projeto.
+
+### async_echo_server.cpp
+
+Este arquivo contém uma implementação de um servidor de eco TCP assíncrono usando a biblioteca Boost Asio. Este código serve como um exemplo de como configurar e iniciar um servidor TCP, aceitar conexões de entrada e realizar leitura e gravação assíncrona em soquetes usando manipuladores de retorno de chamada.
+
+### binary_file_manipulation.cpp
+
+Este arquivo ilustra como manipular arquivos binários em C++. Ele mostra como abrir um arquivo em modo binário, escrever dados binários em um arquivo e ler dados binários de um arquivo. Este exemplo pode ser útil para entender como armazenar as leituras de sensores em um arquivo binário.
