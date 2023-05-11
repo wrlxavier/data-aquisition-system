@@ -111,7 +111,8 @@ python3 sensor_emulator.py
 ```
 Por padrão, o emulador de sensor tentará se conectar a um servidor executando em localhost na porta 9000, e ele usará uma ID de sensor aleatória e enviará uma nova leitura a cada segundo.
 
-Argumentos da linha de comando
+### Argumentos da linha de comando
+
 O emulador de sensor aceita vários argumentos de linha de comando que permitem controlar seu comportamento:
 
 - ```--ip```: O endereço IP do servidor ao qual o emulador de sensor deve se conectar. O padrão é 'localhost'.
@@ -126,6 +127,35 @@ python3 sensor_emulator.py --ip 192.168.1.100 --port 8000 --sensor_id my_sensor 
 ```
 
 Este comando fará com que o emulador de sensor se conecte a um servidor em 192.168.1.100 na porta 8000, use 'my_sensor' como a ID do sensor, e envie uma nova leitura a cada 500 milissegundos.
+
+## Emulador de Cliente
+
+O emulador de cliente é um script em Python que simula um cliente se conectando ao servidor e solicitando os últimos `n` registros de um sensor específico. Ele envia uma solicitação ao servidor e, em seguida, imprime a solicitação e a resposta.
+
+### Como usar
+
+Para usar o emulador de cliente, você precisa ter Python instalado em seu computador. Uma vez que você tenha Python instalado, você pode executar o emulador de cliente a partir da linha de comando.
+
+Aqui está um exemplo de como executar o emulador de cliente:
+
+```bash
+python3 client_emulator.py SENSOR_ID NUM_RECORDS
+```
+
+Substitua SENSOR_ID pelo ID do sensor para o qual você deseja dados, e NUM_RECORDS pelo número de registros que você deseja solicitar.
+
+Você também pode especificar o IP e a porta do servidor com as opções --ip e --port, respectivamente. Se você não especificar essas opções, o emulador de cliente usará 'localhost' para o IP e 9000 para a porta.
+
+### Argumentos da Linha de Comando
+
+O emulador de cliente aceita os seguintes argumentos da linha de comando:
+
+- ```--ip```: O endereço IP do servidor. O padrão é 'localhost'.
+- ```--port```: O número da porta do servidor. O padrão é 9000.
+- ```sensor_id```: O ID do sensor para o qual solicitar dados. Este argumento é obrigatório.
+- ```num_records```: O número de registros para solicitar. Este argumento é obrigatório.
+
+
 
 ## Pasta de Exemplos
 
