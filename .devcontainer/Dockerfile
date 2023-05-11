@@ -8,6 +8,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       gdb \
       git \
       libboost-all-dev \
+      netcat \
       sudo \
       && rm -rf /var/lib/apt/lists/*
 
