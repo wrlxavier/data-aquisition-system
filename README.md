@@ -97,3 +97,31 @@ std::string time_t_to_string(std::time_t time) {
     return ss.str();
 }
 ```
+
+## Emulador de Sensor
+
+O emulador de sensor foi projetado para simular um sensor real enviando leituras para o servidor de aquisição de dados. É uma ferramenta útil para testar o sistema em um ambiente controlado.
+
+### Como executar
+
+O emulador de sensor é um script Python e pode ser executado a partir da linha de comando como qualquer outro script Python. Aqui está o comando básico para executar o emulador de sensor:
+
+```bash
+python3 sensor_emulator.py
+```
+Por padrão, o emulador de sensor tentará se conectar a um servidor executando em localhost na porta 9000, e ele usará uma ID de sensor aleatória e enviará uma nova leitura a cada segundo.
+
+Argumentos da linha de comando
+O emulador de sensor aceita vários argumentos de linha de comando que permitem controlar seu comportamento:
+
+--ip: O endereço IP do servidor ao qual o emulador de sensor deve se conectar. O padrão é 'localhost'.
+--port: A porta do servidor à qual o emulador de sensor deve se conectar. O padrão é 9000.
+--sensor_id: A ID do sensor que o emulador deve usar ao enviar leituras. Por padrão, isso é uma string aleatória de até 31 caracteres.
+--frequency: A frequência, em milissegundos, com que o emulador de sensor deve enviar novas leituras. O padrão é 1000 (1 segundo).
+Aqui está um exemplo de como executar o emulador de sensor com argumentos personalizados:
+
+```bash
+python3 sensor_emulator.py --ip 192.168.1.100 --port 8000 --sensor_id my_sensor --frequency 500
+```
+
+Este comando fará com que o emulador de sensor se conecte a um servidor em 192.168.1.100 na porta 8000, use 'my_sensor' como a ID do sensor, e envie uma nova leitura a cada 500 milissegundos.
