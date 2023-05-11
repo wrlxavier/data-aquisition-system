@@ -62,6 +62,7 @@ struct LogRecord {
     double value; // valor da leitura
 };
 #pragma pack(pop)
+```
 
 ### Trabalhando com std::time_t
 
@@ -80,9 +81,11 @@ std::time_t string_to_time_t(const std::string& time_string) {
     ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%S");
     return std::mktime(&tm);
 }
+```
 
 Para converter um std::time_t para uma string de data/hora no formato "AAAA-MM-DDTHH:MM:SS", você pode usar a seguinte função:
 
+```c++
 #include <ctime>
 #include <iomanip>
 #include <sstream>
@@ -92,4 +95,4 @@ std::string time_t_to_string(std::time_t time) {
     std::ostringstream ss;
     ss << std::put_time(tm, "%Y-%m-%dT%H:%M:%S");
     return ss.str();
-}
+}```
