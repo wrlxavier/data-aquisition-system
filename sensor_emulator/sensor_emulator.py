@@ -3,6 +3,7 @@ import random
 import string
 import socket
 import time
+from datetime import datetime
 
 def random_string(length):
     letters = string.ascii_lowercase
@@ -12,8 +13,9 @@ def main(server_ip, server_port, sensor_id, frequency):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((server_ip, server_port))
         while True:
-            value = random.random() * 100  # Generate random sensor value between 0 and 100
-            message = f"{sensor_id}||{value}\r\n"
+            value = random.uniform(-100, 100)
+            timestamp = datetime.now().isoformat()  # Generate current timestamp
+            message = f"{sensor_id}|{timestamp}|{value}\r\n"
             s.sendall(message.encode())
             time.sleep(frequency / 1000.0)  # Convert frequency from ms to s
 
