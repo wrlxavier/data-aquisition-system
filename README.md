@@ -32,7 +32,7 @@ Por exemplo: `GET|SENSOR_001|10\r\n`.
 
 ### Servidor para Cliente (Resposta à Solicitação de Registros)
 
-A mensagem deve ter o seguinte formato: `DATA_HORA|LEITURA\r\n...DATA_HORA|LEITURA\r\nEND\r\n`. 
+A mensagem deve ter o seguinte formato: `NUM_REGISTROS|DATA_HORA|LEITURA\r\n...DATA_HORA|LEITURA\r\nEND\r\n`. 
 
 O servidor deve retornar as `n` últimas leituras do sensor, precedidas pelo número total de registro, separadas por `;`. 
 
