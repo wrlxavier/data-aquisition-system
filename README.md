@@ -14,9 +14,7 @@ Cada conexão representa um sensor. O servidor deve ser capaz de lidar com múlt
 
 3. **Registro de dados**: Todas as leituras dos sensores recebidas pelo servidor devem ser registradas em um arquivo único para cada sensor. Assegure-se de que o servidor possa lidar com o acesso concorrente aos arquivos de log.
 
-4. **Cliente de simulação**: Implemente um cliente de simulação que possa se conectar ao servidor e enviar dados de forma assíncrona. O cliente deve ser capaz de simular diferentes sensores enviando leituras em intervalos aleatórios.
-
-5. **Consulta de registros**: Implemente uma funcionalidade que permita a um cliente solicitar as últimas `n` leituras de um sensor específico, identificado pelo seu ID. O servidor deve responder com as `n` últimas leituras registradas para esse sensor.
+4. **Consulta de registros**: Implemente uma funcionalidade que permita a um cliente solicitar as últimas `n` leituras de um sensor específico, identificado pelo seu ID. O servidor deve responder com as `n` últimas leituras registradas para esse sensor.
 
 ## Formato das Mensagens
 
