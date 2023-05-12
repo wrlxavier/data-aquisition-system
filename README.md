@@ -14,17 +14,15 @@ Cada conexão representa um sensor. O servidor deve ser capaz de lidar com múlt
 
 3. **Registro de dados**: Todas as leituras dos sensores recebidas pelo servidor devem ser registradas em um arquivo único para cada sensor. Assegure-se de que o servidor possa lidar com o acesso concorrente aos arquivos de log.
 
-4. **Cliente de simulação**: Implemente um cliente de simulação que possa se conectar ao servidor e enviar dados de forma assíncrona. O cliente deve ser capaz de simular diferentes sensores enviando leituras em intervalos aleatórios.
-
-5. **Consulta de registros**: Implemente uma funcionalidade que permita a um cliente solicitar as últimas `n` leituras de um sensor específico, identificado pelo seu ID. O servidor deve responder com as `n` últimas leituras registradas para esse sensor.
+4. **Consulta de registros**: Implemente uma funcionalidade que permita a um cliente solicitar as últimas `n` leituras de um sensor específico, identificado pelo seu ID. O servidor deve responder com as `n` últimas leituras registradas para esse sensor.
 
 ## Formato das Mensagens
 
 ### Sensor para Servidor (Envio de Dados)
 
-A mensagem deve ter o seguinte formato: `SENSOR_ID|DATA_HORA|LEITURA\r\n`. 
+A mensagem deve ter o seguinte formato: `LOG|SENSOR_ID|DATA_HORA|LEITURA\r\n`. 
 
-Por exemplo: `SENSOR_001|2023-05-11T15:30:00|78.5\r\n`.
+Por exemplo: `LOG|SENSOR_001|2023-05-11T15:30:00|78.5\r\n`.
 
 ### Cliente para Servidor (Solicitação de Registros)
 
@@ -34,11 +32,11 @@ Por exemplo: `GET|SENSOR_001|10\r\n`.
 
 ### Servidor para Cliente (Resposta à Solicitação de Registros)
 
-A mensagem deve ter o seguinte formato: `DATA_HORA|LEITURA\r\n...DATA_HORA|LEITURA\r\nEND\r\n`. 
+A mensagem deve ter o seguinte formato: `NUM_REGISTROS;DATA_HORA|LEITURA;...;DATA_HORA|LEITURA\r\n. 
 
 O servidor deve retornar as `n` últimas leituras do sensor, precedidas pelo número total de registro, separadas por `;`. 
 
-Por exemplo: `2|2023-05-11T15:30:00|78.5|2023-05-11T15:31:00|77.5\r\n`. 
+Por exemplo: `2;2023-05-11T15:30:00|78.5;2023-05-11T15:31:00|77.5\r\n`. 
 
 Se um cliente solicitar mais registros do que os disponíveis, o servidor deve retornar apenas os registros disponíveis.
 
