@@ -20,9 +20,9 @@ Cada conexão representa um sensor. O servidor deve ser capaz de lidar com múlt
 
 ### Sensor para Servidor (Envio de Dados)
 
-A mensagem deve ter o seguinte formato: `SENSOR_ID|DATA_HORA|LEITURA\r\n`. 
+A mensagem deve ter o seguinte formato: `LOG|SENSOR_ID|DATA_HORA|LEITURA\r\n`. 
 
-Por exemplo: `SENSOR_001|2023-05-11T15:30:00|78.5\r\n`.
+Por exemplo: `LOG|SENSOR_001|2023-05-11T15:30:00|78.5\r\n`.
 
 ### Cliente para Servidor (Solicitação de Registros)
 
