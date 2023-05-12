@@ -4,7 +4,7 @@ import socket
 def main(server_ip, server_port, sensor_id, num_records):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((server_ip, server_port))
-        request = f"{sensor_id}|{num_records}\r\n"
+        request = f"GET|{sensor_id}|{num_records}\r\n"
         s.sendall(request.encode())
         
         print(f"Sent request: {request.strip()}")

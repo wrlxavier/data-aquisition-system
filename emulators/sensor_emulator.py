@@ -15,7 +15,7 @@ def main(server_ip, server_port, sensor_id, frequency):
         while True:
             value = random.uniform(-100, 100)
             timestamp = datetime.now().isoformat()  # Generate current timestamp
-            message = f"{sensor_id}|{timestamp}|{value}\r\n"
+            message = f"LOG|{sensor_id}|{timestamp}|{value}\r\n"
             s.sendall(message.encode())
             time.sleep(frequency / 1000.0)  # Convert frequency from ms to s
 
