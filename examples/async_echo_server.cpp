@@ -29,18 +29,18 @@ private:
         {
           if (!ec)
           {
-            auto message = std::make_shared<std::string>(length, 0);
             std::istream is(&buffer_);
-            is.read(&(*message)[0], length);
+            std::string message(std::istreambuf_iterator<char>(is), {});
+            std::cout << "Received: " << message << std::endl;
             write_message(message);
           }
         });
   }
 
-  void write_message(std::shared_ptr<std::string> message)
+  void write_message(const std::string& message)
   {
     auto self(shared_from_this());
-    boost::asio::async_write(socket_, boost::asio::buffer(*message),
+    boost::asio::async_write(socket_, boost::asio::buffer(message),
         [this, self, message](boost::system::error_code ec, std::size_t /*length*/)
         {
           if (!ec)
